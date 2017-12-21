@@ -1,0 +1,17 @@
+doctype html
+html(lang="en")
+  head
+    title #{post.title}   
+  bodysection.post
+    .container.text-right
+      a(href="").text-faded view actually
+      .row
+        .col-lg-8.col-lg-offset-2.text-center
+          h2.section-heading #{post.title}
+          
+          hr.light
+            
+          p.text-faded
+            | #{post.description}
+          .article
+            | #{post.description}

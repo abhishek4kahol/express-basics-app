@@ -1,0 +1,20 @@
+{
+  "name": "express-basics-app",
+  "version": "1.0.0",
+  "description": "A express application",
+  "main": "src/app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/abhishek4kahol/express-basics-app.git"
+  },
+  "author": "abhishek kahol",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.2",
+    "nodemon": "^1.14.1",
+    "pug": "^2.0.0-rc.4"
+  }
+}
