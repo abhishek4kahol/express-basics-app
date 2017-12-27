@@ -9,7 +9,14 @@ var app = express();
 //extended and altered by this we mean we are going to assign different settings and
 //routes to it and is now the central part of it.
 
-//before we can render jade template , we need to tell express how. to do this we need two configurations
+app.use(express.static(__dirname + '/public'))
+//use method defines middleware for our application. middleware is an important concept in express,
+//middleware is the   logic that tells express how to handle a request in between the time a request made
+//by client but before it arrives at routes.this is where middle in the middleware comes from.It can be
+//used in any range of tasks from authentication so only certian users can view certain pages on website,
+//to serving static files like we are about to do
+
+//before we can render pug template , we need to tell express how. to do this we need two configurations
 app.set('view engine', 'pug');
 //this is to set the view engine parameter on our application i.e. jade
 //app.set method defines different settings in our express application.
@@ -33,7 +40,7 @@ app.get('/blog/:title?', function(req,res) { // ? tells the parameter that it is
   var title = req.params.title;
   if(title === undefined) {
     res.status(503); //service unavailable.
-    res.send('This page is under construction');
+    res.render('blog');
   } else {
   var post = posts[title] || {};   //{} :if a post doesn't exist then show an empty page,this is a temporary solutions
   res.render('post', {post: post}); // we can access the above defined variable title in

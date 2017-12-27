@@ -1,0 +1,21 @@
+head
+    title Landing Page
+    meta(charset='UTF-8')
+    meta(name='description', content='full stack javascript polling/voting app')
+    meta(name='author', content='Arshad Khan')
+    meta(name='theme-color', content='#2e3d49')
+    link(rel='shortcut icon', href='/public/img/favicon.ico', type='image/x-icon')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+
+    link(rel='stylesheet', href='/css/bootstrap.css',type='text/css')
+    link(rel='stylesheet', href='/css/creative.css',type='text/css')
+    //-custom fonts
+    link(rel='stylesheet', href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800', type='text/css')
+    link(rel='stylesheet',href='https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic', type='text/css')
+    link(href='/css/font-awesome.css', rel='stylesheet', type='text/css')
+    //- above are all static dependencies
+    //-our static files includes all the javascript,css,images and fonts.static files are different
+    //- from templates because they are sent to client as is without any changes that an template 
+    //-can undergo.even though they dont go through the rendering process they are still very 
+    //-important for the overall appearance and functionality of our apps frontend.
+    //- lets get the express static server setup. and to use it app.use() that will be written in app.js file. 
