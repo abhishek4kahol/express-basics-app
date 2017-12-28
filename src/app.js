@@ -1,9 +1,11 @@
-'use strict';     //this is going to save from making mistakes
+'use strict';
+//this is going to save from making mistakes
 
 var express = require('express');
 //requiring the express module and using it with the help of variable express.
 
 var posts = require('./mock/posts.json');
+
 var app = express();
 //we created variable app  and assign express to it.the app variable is now going to be
 //extended and altered by this we mean we are going to assign different settings and
@@ -28,7 +30,11 @@ app.set('views', __dirname + '/templates');
 //source code file this is important because we are starting the server from different
 //directory
 
+var arr = Object.keys(posts).map(key => posts[key])
+//typically in javascript when a method iterates through a datatype,that datatype should
+//be an array.so we will use a common way to convert object to an array.
 
+//var arr = Object.values(obj);   //this With ES7 you will be able to use Object.values
 
 app.get('/', function(req, res){
   res.render('index');
