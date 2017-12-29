@@ -1,0 +1,12 @@
+extends ./layout.pug
+
+block content
+  each post in posts
+    section.post.bg-dark
+      .container.bg-primary
+        .row
+          .col-lg-8.col-lg-offset-2.text-center
+            h2.section-heading.bg-primary.text-center #{post.title}
+            hr.light.text-white
+            p.text-faded.text-white #{post.description}
+    

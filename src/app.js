@@ -30,11 +30,10 @@ app.set('views', __dirname + '/templates');
 //source code file this is important because we are starting the server from different
 //directory
 
-var arr = Object.keys(posts).map(key => posts[key])
-//typically in javascript when a method iterates through a datatype,that datatype should
-//be an array.so we will use a common way to convert object to an array.
+// var postLists = Object.keys(posts).map(key => posts[key]);
+// converting object into array with map function.
 
-//var arr = Object.values(obj);   //this With ES7 you will be able to use Object.values
+var postLists = Object.values(posts);   //this With ES7 you will be able to use Object.values
 
 app.get('/', function(req, res){
   res.render('index');
@@ -46,7 +45,7 @@ app.get('/blog/:title?', function(req,res) { // ? tells the parameter that it is
   var title = req.params.title;
   if(title === undefined) {
     res.status(503); //service unavailable.
-    res.render('blog');
+    res.render('blog',{posts:postLists});
   } else {
   var post = posts[title] || {};   //{} :if a post doesn't exist then show an empty page,this is a temporary solutions
   res.render('post', {post: post}); // we can access the above defined variable title in
